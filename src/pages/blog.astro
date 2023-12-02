@@ -1,22 +1,16 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-
 ---
-
 
 <Layout title="Blog">
     <NavBar theme="light">
-    <main>
-        <div id="custom-substack-embed"></div>
-        <div id="substack-feed-embed"></div>
-    </main>
 </Layout>
 
-
-
----
-
+<main>
+    <div id="custom-substack-embed"></div>
+    <div id="substack-feed-embed"></div>
+</main>
 
 <script>
   (window as any).SubstackFeedWidget = {
@@ -24,7 +18,7 @@ import Layout from "../layouts/Layout.astro";
     posts: 10
   };
 </script>
-<script src="https://substackapi.com/embeds/feed.js" async></script>
+
 <script>
   (window as any).CustomSubstackWidget = {
     substackUrl: "justinmenestrina.substack.com",
@@ -41,3 +35,4 @@ import Layout from "../layouts/Layout.astro";
   };
 </script>
 <script src="https://substackapi.com/widget.js" async></script>
+<script src="https://substackapi.com/embeds/feed.js" async></script>
