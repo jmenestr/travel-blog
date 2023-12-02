@@ -4,10 +4,11 @@ import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 import AJCover from '../images/J&A-Cover.webp';
 import NavBar from '../components/NavBar.astro';
-import '../components/styles/fonts.astro';
+import '../components/styles/fonts.css';
+import Container from '../layouts/Container.astro';
 ---
 
-<!-- <Layout title="Welcome to Astro."> -->
+<Layout title="Justin & Alli">
 	<main>
 		<div class="banner-wrapper">
 			<NavBar />
@@ -36,11 +37,12 @@ import '../components/styles/fonts.astro';
 			</div>
 		</div>
 	</main>
-<!-- </Layout> -->
+</Container>
+</Layout>
 
 <style>
 	.button:hover {
-		color: #6FADE7;
+		color: var(--main-bg-color);
 		background-color: #fff;
 	}
 	.button {
@@ -62,7 +64,7 @@ import '../components/styles/fonts.astro';
 		padding: 0 25vw 0 0;
 	}
 	.footer {
-		background-color: #6FADE7;
+		background-color: var(--main-bg-color);
 	}
 	.banner-wrapper {
 		background-image: url('../images/J&A-Cover.webp');

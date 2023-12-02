@@ -1,19 +1,32 @@
 ---
-
+const theme = Astro.props.theme || 'dark';
+const textColor = theme === 'dark' ? '#fff' : '#000';
+const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
 ---
 
 
-<nav class="flex items-center align-middle py-8 px-6 text-white">
+<nav class="flex items-center align-middle py-8 px-6">
     <div>
-        <p class="text-2xl tracking-wide">
+        <a class="text-2xl tracking-wide logo" href="/">
             Alli & Justin
-        </p>
+        </a>
     </div>
-    <ul class="flex items-center">
-        <li>About</li>
-        <li>World Travels</li>
-        <li>Destinations</li>
-        <li>Blog</li>
+    <ul class="flex items-center main-nav">
+        <li class="mr-6">
+            <a href="/about" class="py-2 px-1">About</a>
+        </li>
+
+        <li class="mr-6">
+            <a href="/world-travels" class=" py-2 px-1">World Travels</a>
+        </li>
+
+        <li class="mr-6">
+            <a href="/destinations" class=" py-2 px-1">Destinations</a>
+        </li>
+
+        <li class="mr-6">
+            <a href="/blog" class=" py-2 px-1">Blog</a>
+        </li>
         
     </ul>
 
@@ -27,11 +40,27 @@
 
 
 
-<style>
+<style define:vars={{textColor, hoverColor}}>
+    .logo {
+        font-weight: 700;
+    }
+    .main-nav a {
+            background-color: transparent;
+            letter-spacing: 0.2px;
+            display: block;
+            transition-property: color, background-color;
+            transition-duration: 0.3s;
+            border-radius: 5px;;
+        }
+    .main-nav a:hover {
+            background-color: var(--hoverColor);
+            color: var(--main-bg-color);
+        }
+
     nav {
         font-family: 'Poppins';
-        font-weight: 600;
         display: flex;
         justify-content: space-between;
+        color: var(--textColor);
     }
 </style>
