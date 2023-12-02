@@ -1,11 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import YoutubeIcon from "../images/YoutubeLogo.svg";
-import InstragramIcon from "../images/InstagramLogoColor.svg";
 import YoutubeLogoDark from '../images/YoutubeLogoDark.svg';
-import YoutubeLogoLight from '../images/YoutubeLogoLight.svg';
 import InstagramDark from '../images/InstagramLogoDark.svg';
-import InstagramLight from '../images/InstagramLogoLight.svg';
 
 const theme = Astro.props.theme || 'dark';
 const textColor = theme === 'dark' ? '#fff' : '#000';
@@ -40,28 +36,17 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
 
 
     <ul class="flex">
-    <!-- <li class="mr-4">
-        <a>
-            <Image src={YoutubeIcon} alt="Youtube" class="w-8 h-8" />
-        </a>
-    </li>
-    <li class="mr-4">
-        <a>
-            <Image src={InstragramIcon} alt="Instagram" class="w-8 h-8" />
-        </a>
-    </li> -->
+        <li class="mr-4">
+            <a>
+                <Image src={YoutubeLogoDark} alt="Youtube" class="w-8 h-8" />
+            </a>
+        </li>
 
-    <li class="mr-4">
-        <a>
-            <Image src={YoutubeLogoDark} alt="Youtube" class="w-8 h-8" />
-        </a>
-    </li>
-
-    <li class="mr-4">
-        <a>
-            <Image src={InstagramDark} alt="Instagram" class="w-8 h-8" />
-        </a>
-    </li>
+        <li class="mr-4">
+            <a>
+                <Image src={InstagramDark} alt="Instagram" class="w-8 h-8" />
+            </a>
+        </li>
     </ul>
 
 </nav>
@@ -69,6 +54,7 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
 
 
 <style define:vars={{textColor, hoverColor}}>
+
     .logo {
         font-weight: 700;
     }
