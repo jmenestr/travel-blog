@@ -1,6 +1,7 @@
 ---
 import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Blog">
@@ -11,7 +12,7 @@ import Layout from "../layouts/Layout.astro";
     <div id="custom-substack-embed"></div>
     <div id="substack-feed-embed"></div>
 </main>
-
+<Footer />
 <script>
   (window as any).SubstackFeedWidget = {
     substackUrl: "blog.alliandjustin.com",

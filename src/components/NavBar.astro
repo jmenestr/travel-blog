@@ -1,7 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import YoutubeLogoDark from '../images/YoutubeLogoDark.svg';
-import InstagramDark from '../images/InstagramLogoDark.svg';
+import SocialMediaLinks from './social-media-links/index.astro';
 
 const theme = Astro.props.theme || 'dark';
 const textColor = theme === 'dark' ? '#fff' : '#000';
@@ -15,7 +13,7 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
             Alli & Justin
         </a>
     </div>
-    <ul class="flex items-center main-nav">
+    <ul class="flex items-center main-nav text-xl">
         <li class="mr-6">
             <a href="/about" class="py-2 px-1">About</a>
         </li>
@@ -35,19 +33,7 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
     </ul>
 
 
-    <ul class="flex">
-        <li class="mr-4">
-            <a>
-                <Image src={YoutubeLogoDark} alt="Youtube" class="w-8 h-8" />
-            </a>
-        </li>
-
-        <li class="mr-4">
-            <a>
-                <Image src={InstagramDark} alt="Instagram" class="w-8 h-8" />
-            </a>
-        </li>
-    </ul>
+   <SocialMediaLinks>
 
 </nav>
 

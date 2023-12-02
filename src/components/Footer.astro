@@ -1,71 +1,56 @@
 ---
-import { Image } from "astro:assets";
-import YoutubeLogoDark from '../images/YoutubeLogoDark.svg';
-import YoutubeLogoLight from '../images/YoutubeLogoLight.svg';
-import InstagramDark from '../images/InstagramLogoDark.svg';
-import InstagramLight from '../images/InstagramLogoLight.svg';
-
+import Wrapper from '../layouts/Wrapper.astro';
+import SocialMediaLinks from './social-media-links/index.astro';
 ---
 
-<div class="footer flex justify-between py-8 px-6">
-    <div>
-        <h3 class='text-2xl'>Let's connect</h3>
-        <nav>
-        <ul>
-            <li>
-                <a href="/about" target="_blank">
-                    About Us
-                </a>
-            </li>
-        </ul>
-        </nav>
-        
-    </div>
-    <div>
-        <h2 class="text-3xl">Justin & Alli</h2>
-        <p>hello@alliandjustin.com</p>
-        <ul>
-            <!-- <li class="mr-4">
-                <a>
-                    <Image src={YoutubeIcon} alt="Youtube" class="w-8 h-8" />
-                </a>
-            </li>
-            <li class="mr-4">
-                <a>
-                    <Image src={InstragramIcon} alt="Instagram" class="w-8 h-8" />
-                </a>
-            </li> -->
+<footer class="footer text-white ">
+    <div class="mx-auto max-w-screen-2xl">
+    <div class="py-8 px-6  flex justify-between ">
+        <div>
+            <h3 class='text-2xl mb-4'>Let's connect</h3>
+            <nav class="internal-links">
+            <ul>
+                <li>
+                    <a href="/about">
+                        About Us
+                    </a>
+                </li>
+            </ul>
+            </nav>
             
-            <li class="mr-4">
-                <a>
-                    <Image src={YoutubeLogoDark} alt="Youtube" class="w-8 h-8" />
-                </a>
-            </li>
-        
-            <li class="mr-4">
-                <a>
-                    <Image src={InstagramDark} alt="Instagram" class="w-8 h-8" />
-                </a>
-            </li>
-        </ul>
-    </div>
+        </div>
+        <div class="'flex flex-col">
+            <h2 class="text-3xl mb-2 flex justify-center">Justin & Alli</h2>
+            <p class="mb-2">hello@alliandjustin.com</p>
+            <SocialMediaLinks />
+        </div>
 
-    <div>
-        <h3 class="text-2xl">Navigation</h3>
-        <nav>
-           <ul>
-            <li>
-
-            </li>
-           </ul>
-        </nav>
+        <div>
+            <h3 class="text-2xl mb-4">Navigation</h3>
+            <nav class="internal-links">
+            <ul class='flex flex-col items-end'>
+                <li>
+                    <a href="/blog">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            </nav>
+        </div>
     </div>
-</div>
+    </div>
+</footer>
 
 
 <style>
 
-.footer {
-    background-color: var(--main-bg-color);
-}
+    .internal-links a:hover {
+        text-decoration: underline;
+    }
+    .footer {
+        background-color: var(--main-bg-color);
+
+    }
+
+
 </style>

@@ -1,0 +1,20 @@
+---
+import InstagramLink from "./InstagramLink.astro";
+import YouTubeLink from "./YouTubeLink.astro";
+
+---
+
+<ul class="flex justify-center">
+    <li class="mr-2">
+        <a>
+            <InstagramLink />
+        </a>
+    </li>
+
+    <li>
+        <a>
+            <YouTubeLink />
+        </a>
+    </li>
+    <slot />
+</ul>
