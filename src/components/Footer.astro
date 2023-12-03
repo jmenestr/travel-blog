@@ -5,10 +5,10 @@ import SocialMediaLinks from './social-media-links/index.astro';
 
 <footer class="footer text-white ">
     <div class="footer mx-auto max-w-screen-2xl">
-    <div class="flex flex-col lg:flex-row py-8 px-6 justify-between ">
-        <div>
-            <h3 class='text-2xl mb-4'>Let's connect</h3>
-            <nav class="internal-links">
+    <div class="flex flex-col md:flex-row items:center md:items-start py-8 px-6 justify-between">
+        <div class="flex flex-col items-center md:items-start mb-8 lg:mb-0">
+            <h3 class='text-xl md:mb-4 uppercase font-bold tracking-wide'>Let's connect</h3>
+            <nav class="internal-links flex flex-col items-center">
             <ul>
                 <li>
                     <a href="/about">
@@ -19,14 +19,14 @@ import SocialMediaLinks from './social-media-links/index.astro';
             </nav>
             
         </div>
-        <div class="'flex flex-col ">
-            <h2 class="text-3xl mb-2 flex lg:justify-center">Justin & Alli</h2>
-            <p class="mb-2">hello@alliandjustin.com</p>
+        <div class="flex flex-col items-center justify-center mb-8 lg:mb-0">
+            <h2 class="text-3xl mb-2 font-bold">Justin & Alli</h2>
             <SocialMediaLinks />
+            <p class="mt-2">hello@alliandjustin.com</p>
         </div>
 
-        <div class='flex flex-col items-start'>
-            <h3 class="text-2xl mb-4">Navigation</h3>
+        <div class='flex flex-col items-center md:items-end'>
+            <h3 class="text-lg md:mb-4 uppercase font-bold tracking-wide">Navigation</h3>
             <nav class="internal-links">
             <ul class='flex flex-col items-end'>
                 <li>
@@ -49,6 +49,7 @@ import SocialMediaLinks from './social-media-links/index.astro';
     }
     .footer {
         background-color: var(--main-bg-color);
+        font-family: "Poppins", sans-serif;
 
     }
 
