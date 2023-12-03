@@ -73,22 +73,22 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
 </nav>
 
 <script>
-    const menuIcon = document.querySelector('.mobile-menu-buton');
-    const heroBackground = document.querySelector('.hero-background');
-    const banner = document.querySelector('.close-button');
-    const body = document.querySelector('body');
+    const menuIcon = document.querySelector<HTMLElement>('.mobile-menu-buton');
+    const heroBackground = document.querySelector<HTMLElement>('.hero-background');
+    const banner = document.querySelector<HTMLElement>('.close-button');
+    const body = document.querySelector<HTMLElement>('body');
     // Freeze up scroll
     menuIcon.addEventListener('click', () => {
-        const nav = document.querySelector('.mobile-nav');
+        
+        const nav = document.querySelector<HTMLElement>('.mobile-nav');
         nav.classList.toggle('gone');
         body.style["overflow-y"] = 'hidden';
-        nav.style["backdrop-filter"] = 'blur(5px)';
 
     })
 
-    const closeButton = document.querySelector('.close-button');
+    const closeButton = document.querySelector<HTMLElement>('.close-button');
     closeButton.addEventListener('click', () => {
-        const nav = document.querySelector('.mobile-nav');
+        const nav = document.querySelector<HTMLElement>('.mobile-nav');
         nav.classList.toggle('gone');
         body.style["overflow-y"] = 'scroll';
         nav.style["backdrop-filter"] = 'blur(0px)';
