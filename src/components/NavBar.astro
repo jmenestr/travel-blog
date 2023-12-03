@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import SocialMediaLinks from './social-media-links/index.astro';
-
+import MenuIcon from '../images/MenuIcon.svg';
+import XIcon from '../images/XIcon.svg';
 const theme = Astro.props.theme || 'dark';
 const textColor = theme === 'dark' ? '#fff' : '#000';
 const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
@@ -14,7 +16,7 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
         </a>
     </div>
 
-    <div class="flex align-middle items-center">
+    <div class="align-middle items-center hidden lg:flex">
         <ul class="flex items-center main-nav text-xl">
             <li class="mr-6">
                 <a href="/about" class="py-2 px-4">About</a>
@@ -37,13 +39,80 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
        <SocialMediaLinks>
     </div>
 
-
+    {/* Mobile Nav */}
+    <div class="max-lg:flex hidden">
+        <button class='mobile-menu-buton'>
+            <Image src={MenuIcon} class="h-6 w-6" alt="Mobile Nav Menu" />
+        </button>
+        <div class="gone mobile-nav absolute min-h-screen  border-l-1 border-white border-solid">
+            <div class="flex justify-end py-8 px-6">
+                <button class="close-button">
+                    <Image src={XIcon} alt="Close Nav Menu" class="h-4 w-4" />
+                </button>
+            </div>
+            <ul class="flex flex-col  main-nav text-xl px-4">
+                <li class="mr-6">
+                    <a href="/about" class="py-2 px-4">About</a>
+                </li>
+        
+                <li class="mr-6">
+                    <a href="/world-trip" class="py-2 px-4">World Travels</a>
+                </li>
+        
+                <li class="mr-6">
+                    <a href="/destinations" class="py-2 px-4">Destinations</a>
+                </li>
+        
+                <li>
+                    <a href="/blog" class="py-2 px-4">Blog</a>
+                </li>
+            </ul>
+            <SocialMediaLinks />
+        </div>
+    </div>
 </nav>
 
+<script>
+    const menuIcon = document.querySelector('.mobile-menu-buton');
+    const heroBackground = document.querySelector('.hero-background');
+    const banner = document.querySelector('.close-button');
+    const body = document.querySelector('body');
+    // Freeze up scroll
+    menuIcon.addEventListener('click', () => {
+        const nav = document.querySelector('.mobile-nav');
+        nav.classList.toggle('gone');
+        body.style["overflow-y"] = 'hidden';
+        nav.style["backdrop-filter"] = 'blur(5px)';
 
+    })
+
+    const closeButton = document.querySelector('.close-button');
+    closeButton.addEventListener('click', () => {
+        const nav = document.querySelector('.mobile-nav');
+        nav.classList.toggle('gone');
+        body.style["overflow-y"] = 'scroll';
+        nav.style["backdrop-filter"] = 'blur(0px)';
+
+    })
+</script>
 
 <style define:vars={{textColor, hoverColor}}>
-
+    .mobile-nav.gone {
+        right: -300px;
+    }
+    
+    .mobile-nav {
+        transition-property: right;
+        transition-duration: 0.2s;
+        background-color: var(--main-bg-color);
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 300px;
+        min-height: 100%;;
+        
+    }
     .logo {
         font-weight: 700;
     }
@@ -63,6 +132,7 @@ const hoverColor = theme === 'dark' ? '#fff' : 'transparent';
     nav {
         font-family: 'Poppins';
         display: flex;
+        overflow: hidden;
         justify-content: space-between;
         color: var(--textColor);
     }
