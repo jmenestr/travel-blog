@@ -1,20 +1,28 @@
 ---
 import InstagramLink from "./InstagramLink.astro";
-import YouTubeLink from "./YouTubeLink.astro";
+import SubstackLogo from '../../images/SubstackLogo.astro';
+import YoutubeLogo from '../../images/YoutubeLogo.astro';
+import InstagramLogo from '../../images/InstagramLogo.astro';
+
+const theme = Astro.props.theme || 'light';
 
 ---
 
 <ul class="flex justify-center">
     <li class="mr-4">
+        <a href="https://instagram.com/alliandjustintravel" target="_blank">
+            <InstagramLogo theme={theme} height="h-6" width="w-6" />
+        </a>
+    </li>
+    <li class="mr-4">
         <a>
-            <InstagramLink />
+            <YoutubeLogo theme={theme} height="h-6" width="w-6" />
         </a>
     </li>
 
     <li>
-        <a>
-            <YouTubeLink />
+        <a href="https://blog.alliandjustin.com" target="_blank">
+            <SubstackLogo theme={theme} height="h-6" width="w-6" />
         </a>
     </li>
-    <slot />
 </ul>
