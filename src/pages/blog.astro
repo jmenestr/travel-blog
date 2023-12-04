@@ -31,10 +31,11 @@ import Wrapper from "../layouts/Wrapper.astro";
     posts: 10
   };
 </script>
+<script src="https://substackapi.com/widget.js" async></script>
 
 <script>
-  window.CustomSubstackWidget = {
-    substackUrl: "prostack.substack.com",
+  (window as any).CustomSubstackWidget = {
+    substackUrl: "blog.alliandjustin.com",
     placeholder: "example@gmail.com",
     buttonText: "Subscribe",
     theme: "custom",
@@ -47,5 +48,4 @@ import Wrapper from "../layouts/Wrapper.astro";
     // Go to substackapi.com to unlock custom redirect
   };</script>
 </script>
-<script src="https://substackapi.com/widget.js" async></script>
 <script src="https://substackapi.com/embeds/feed.js" async></script>
