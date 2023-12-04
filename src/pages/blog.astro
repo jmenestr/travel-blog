@@ -22,30 +22,32 @@ import Wrapper from "../layouts/Wrapper.astro";
     </article>
     </Wrapper>
 </Layout>
+
+  <div>
+    <script>
+      (window).SubstackFeedWidget = {
+        substackUrl: "blog.alliandjustin.com",
+        posts: 10
+      };
+    </script>
+    <script src="https://substackapi.com/widget.js" defer></script>
+    
+    <script>
+      (window as any).CustomSubstackWidget = {
+        substackUrl: "blog.alliandjustin.com",
+        placeholder: "example@gmail.com",
+        buttonText: "Subscribe",
+        theme: "custom",
+        colors: {
+          primary: "#6FADE7",
+          input: "#00000000",
+          email: "#000000",
+          text: "#FFFFFF",
+        },
+      };
+    </script>
+    <script src="https://substackapi.com/embeds/feed.js" defer></script>
+  </div>
 <Footer />
 
 
-<script>
-  (window as any).SubstackFeedWidget = {
-    substackUrl: "blog.alliandjustin.com",
-    posts: 10
-  };
-</script>
-<script src="https://substackapi.com/widget.js" async></script>
-
-<script>
-  (window as any).CustomSubstackWidget = {
-    substackUrl: "blog.alliandjustin.com",
-    placeholder: "example@gmail.com",
-    buttonText: "Subscribe",
-    theme: "custom",
-    colors: {
-      primary: "#6FADE7",
-      input: "#00000000",
-      email: "#000000",
-      text: "#FFFFFF",
-    },
-    // Go to substackapi.com to unlock custom redirect
-  };
-</script>
-<script src="https://substackapi.com/embeds/feed.js" async></script>
