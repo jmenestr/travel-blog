@@ -1,14 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import NavBar from '../../components/NavBar.astro';
-import Footer from '../../components/Footer.astro';
+import HTML from '../../layouts/HTML.astro';
 ---
 
-<Layout title="World Trip Catagories">
-    <NavBar theme="light"/>
-    <h1>World Trip Catagories</h1>
-    <a href="/world-trip/itinerary">
-        itinerary
-    </a>
-</Layout>
-<Footer />
+<HTML title="World Trip Catagories">
+    <Layout>
+        <h1>World Trip Catagories</h1>
+        <a href="/world-trip/itinerary">
+            itinerary
+        </a>
+    </Layout>
+</HTML>

@@ -1,14 +1,10 @@
 ---
-import NavBar from "../components/NavBar.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Wrapper from "../layouts/Wrapper.astro";
+import HTML from '../layouts/HTML.astro';
 ---
 
-<Layout title="Blog">
-    <Wrapper>
-      <NavBar theme="light" />
-      <hr />
+<HTML title="Blog">
+  <Layout>
       <article class='prose my-8 min-w-full'>
         <h2> Subscribe to our blog!</h2>
         <p>Hey everyone! We're really exited to share our experiences with you all as we travel.</p>
@@ -18,10 +14,8 @@ import Wrapper from "../layouts/Wrapper.astro";
         </div>
         <h2> Recent Posts </h2>
         <div id="substack-feed-embed"></div>
-    
     </article>
-    </Wrapper>
-</Layout>
+  </Layout>
 
   <div>
     <script>
@@ -48,6 +42,6 @@ import Wrapper from "../layouts/Wrapper.astro";
     </script>
     <script src="https://substackapi.com/embeds/feed.js" defer></script>
   </div>
-<Footer />
 
+</HTML>
 
