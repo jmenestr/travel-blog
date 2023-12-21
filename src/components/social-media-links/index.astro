@@ -1,8 +1,8 @@
 ---
-import InstagramLink from "./InstagramLink.astro";
 import SubstackLogo from '../../images/SubstackLogo.astro';
 import YoutubeLogo from '../../images/YoutubeLogo.astro';
 import InstagramLogo from '../../images/InstagramLogo.astro';
+import TiktokLogo from '../../images/TiktokLogo.astro';
 
 const theme = Astro.props.theme || 'light';
 
@@ -20,9 +20,17 @@ const theme = Astro.props.theme || 'light';
         </a>
     </li>
 
+    <li class="mr-4">
+        <a href="https://www.tiktok.com/@alliandjustintravel" target="_blank">
+            <TiktokLogo theme={theme} height="h-6" width="w-6" />
+        </a>
+    </li>
+
     <li>
         <a href="https://blog.alliandjustin.com" target="_blank">
             <SubstackLogo theme={theme} height="h-6" width="w-6" />
         </a>
     </li>
+
+
 </ul>
